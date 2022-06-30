@@ -12,8 +12,7 @@ async function submitHandler(e) {
   const email = e.target.formBasicEmail.value;
   const password = e.target.formBasicPassword.value;
   if (estaRegistrado) {
-    const usuario = await createUserWithEmailAndPassword(auth, email, password);
-  console.log(usuario);
+    await createUserWithEmailAndPassword(auth, email, password);
   } else {
     await signInWithEmailAndPassword(auth, email, password);
   }
